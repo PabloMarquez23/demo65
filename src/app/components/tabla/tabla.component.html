@@ -1,0 +1,18 @@
+<table border="1">
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let articulo of articulos">
+      <td>{{ articulo.codigo }}</td>
+      <td>{{ articulo.descripcion }}</td>
+      <td>{{ articulo.precio }}</td>
+      <td>
+        <button (click)="seleccionarArticulo.emit(articulo)">Seleccionar</button>
+        <button (click)="eliminarArticulo(articulo.codigo)">Borrar</button>
+      </td>
+    </tr>
+  </table>
+  

@@ -1,0 +1,93 @@
+<h1>Hola, {{ name }}</h1>
+      <h2>{{ title }}</h2>
+      <p> Edad = {{edad }} {{esMayorDeEdad()}}<br/>
+          Salario mensual = {{ salario }}<br/>
+          Salario anual = {{ salario * 12 }}<br/>
+      </p>
+
+      <p (click)="incrementar()">
+        Edad = {{ edad }} <span *ngIf = "edad <18"> Es menor de edad </span><br>
+      </p>
+
+      <ul>
+        <li *ngFor = "let sueldo of sueldos"> {{sueldo*contador}}</li>
+      </ul>
+       <p>
+      {{contador}}
+      <button (click)="incrementar()">Incrementar</button>
+    </p>
+    <hr/>
+
+    <form>
+      <input type="text" name="txtName"[(ngModel)]="name"/><br/>
+      A=<input type="number" name="txtA"[(ngModel)]="a"/><br/>
+      B=<input type="number" name="txtB"[(ngModel)]="b"/><br/>
+      C=<input type="number" name="txtC"[(ngModel)]="c"/><br/>
+      <button (click)="sumar()">Sumar</button>
+    </form>
+
+    <app-tabla
+    [articulos]="articulos"
+    (articuloBorrado)="borrarArticulo($event)"
+    (seleccionarArticulo)="seleccionarArticulo($event)">
+    </app-tabla>
+  
+    Codigo <input type="number" [(ngModel)]="codigo"><br>
+    Descripcion <input type="text" [(ngModel)]="descripcion"><br>
+    Precio <input type="number" [(ngModel)]="precio"><br>
+    <button (click)="save()">Guardar</button>
+    <hr>
+  
+    <hr />
+    <app-dado #dado1 color="red"></app-dado>
+    <app-dado #dado2 color="blue"></app-dado>
+    <app-dado #dado3 color="black"></app-dado>
+    <hr />
+    <button (click)="lanzarTodos()">Lanzar Todos</button>
+    <hr />
+    <div class="image-container">
+      <img *ngFor="let image of selectedImages" [src]="image" alt="Imagen aleatoria" style="width: 100px; height: auto; margin: 5px;">
+    </div>
+    <p *ngIf="message" class="message">{{ message }}</p>
+    <button (click)="showRandomImages()">Mostrar Imágenes Aleatorias</button>
+    
+    <hr/>
+    {{minuto}} min.
+    <app-crononmetro (minuto)="actualizar($event)"></app-crononmetro>
+   
+    <table border="1">
+      <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Foto</th>
+        <th>Acciones</th>
+      </tr>
+      <tr *ngFor="let perro of perros">
+        <td>{{ perro.nombre }}</td>
+        <td>{{ perro.raza }}</td>
+        <td><img [src]="perro.foto"></td>
+
+        <td>
+          <button >Seleccionar</button>
+          <button >Borrar</button>
+        </td>
+      </tr>
+    </table>
+  
+ 
+  
+
+      <p>Felicidades tu pagina esta corriendo con exito UwU 🥇</p>
+      <br>
+      <p>Para mas codigos de html y Angular puedes dirigirte al repositorio de
+      <a href="https://github.com/PabloMarquez23/Web-Cursos"> <strong> Github</strong> </a></p>
+      <h3><strong>CONTACTOS</strong></h3>
+      <br><br>
+      <label><strong>Nombre: </strong>Pablo Márquez</label>
+      <br>
+      <label><strong>Correo Institucional: </strong>pmarquezjez.ups.edu.ec</label>
+      <br>
+      <label><strong>Institucion Educativa: </strong>Universidad Politecnica Saleciana</label>
+
+      
+<router-outlet />
