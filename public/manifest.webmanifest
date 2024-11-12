@@ -1,7 +1,7 @@
 {
   "name": "Angular-Proyect",
   "short_name": "Angular",
-  "theme_color": "#00FF00",
+  "theme_color": "#00F00",
   "background_color": "#00FF00",
   "display": "standalone",
   "scope": "./",
