@@ -8,10 +8,7 @@ import { firstValueFrom } from 'rxjs';
 export class GestionPerrosService {
 
   perros:any = []
-  constructor(private http: HttpClient) { 
-
-
-  }
+  constructor(private http: HttpClient) { }
 
 
   async addPerros(nombre:string, raza:string){

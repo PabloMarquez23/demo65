@@ -1,0 +1,33 @@
+<div>
+  <h2>Gestión de Perros</h2>
+
+  <div>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="perro.nombre" /><br />
+
+    <label>Raza:</label>
+    <input type="text" [(ngModel)]="perro.raza" /><br />
+
+    <button (click)="guardar()">Guardar</button>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let perro of perros">
+        <td>{{ perro.nombre }}</td>
+        <td>{{ perro.raza }}</td>
+        <td>
+          <button (click)="seleccionar(perro)">Seleccionar</button>
+          <button (click)="borrar(perro.id)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

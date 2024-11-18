@@ -6,6 +6,7 @@ import { CrononmetroComponent } from '../../components/crononmetro/crononmetro.c
 import { TablaComponent } from '../../components/tabla/tabla.component';
 import { DadoComponent } from '../../components/dado/dado.component';
 import { GestionPerrosService } from '../../services/gestion-perros.service';
+import { PerrosbfbService } from '../../services/perrosbfb.service';
 
 @Component({
   selector: 'app-root',
@@ -30,14 +31,15 @@ export class InicioComponent implements OnInit{
 
 
   perros:any
-  constructor(private perrosService: GestionPerrosService){
-
-
+  constructor(private perrosService: GestionPerrosService, private Perrobfbservice: PerrosbfbService){
+    
   }
   ngOnInit(): void {
     this.perrosService.addPerros('Renzo','Beagle')
     this.perrosService.addPerros('Rambo','Koeker')
     this.perros=this.perrosService.getPerros()
+    this.Perrobfbservice.addPerro ('Renzo','Beagle')
+    this.Perrobfbservice.addPerro ('Renzo','Beagle')
   }
 
   esMayorDeEdad() {
